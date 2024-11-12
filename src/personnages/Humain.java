@@ -27,17 +27,24 @@ public class Humain {
 		this.qteArgent = qteArgent;
 	}
 	
-	
-	public void direBonjour() {
-		System.out.println("Bonjour ! Je m'appelle " + nom + "et j'aime boire du " + boisson );
+	public void parler(String texte) {
+		System.out.println(texte);
+	}
+	public String direBonjour() {
+		return ("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boisson );
 	}
 	
-	public void boire() {
-		System.out.println("Mmmm, un bon verre de " + boisson + "! GLOUPS !");
+	public String boire() {
+		return ("Mmmm, un bon verre de " + boisson + " ! GLOUPS !");
 	}
 	
-	public void acheter(String bien, int prix) {
-		System.out.println("J'ai " + qteArgent + "sous en poche. Je vais pouvoir m'offrir " + bien + "Ã  " + prix + "sous.");
+	public String acheter(String bien, int prix) {
+		if (prix < qteArgent) {
+			perdreArgent(prix);
+			return ("J'ai " + (qteArgent+prix) + " sous en poche. Je vais pouvoir m'offrir " + bien + " à " + prix + "sous.");
+		} else {
+			return ("Je n'ai plus que " + qteArgent + " sous en poche. Je n'ai peut même pas m'offrir " + bien + " à " + prix + " sous.");
+		}
 	}
 	
 	private void gagnerArgent(int gain) {

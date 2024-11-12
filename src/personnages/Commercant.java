@@ -3,7 +3,7 @@ package personnages;
 public class Commercant extends Humain{
 		
 	public Commercant(String nom, int qteArgent) {
-		super(nom, "thÃ©", qteArgent);
+		super(nom, "thé", qteArgent);
 	}
 	
 	
@@ -16,6 +16,6 @@ public class Commercant extends Humain{
 	
 	private void recevoir(int argent) {
 		qteArgent = qteArgent + 100;
-		System.out.println(argent + "sous ! Je te remercie gÃ©nÃ©reux donateur !");
+		System.out.println(argent + "sous ! Je te remercie généreux donateur !");
 	}
 }
